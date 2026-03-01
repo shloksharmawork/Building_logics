@@ -45,7 +45,7 @@
 
 | Date | Topic | Problem | Platform | Difficulty |
 |------|-------|---------|----------|------------|
-| 2026-03-01 | Two Pointer | Q1 | - | - |
+| 2026-03-01 | Two Pointer | [LC 977 - Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/) | LeetCode | Easy |
 
 ---
 
