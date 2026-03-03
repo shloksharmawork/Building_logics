@@ -22,7 +22,12 @@
  * ============================================================
  */
 
-#include <bits/stdc++.h>
+#include <algorithm>
+#include <iostream>
+#include <set>
+#include <string>
+#include <vector>
+
 using namespace std;
 
 // ============================================================
@@ -31,14 +36,14 @@ using namespace std;
 //  Time  : O(n log n)  — O(n) to square + O(n log n) to sort
 //  Space : O(n)        — result array
 // ============================================================
-vector<int> bruteForce(vector<int>& nums) {
-    vector<int> arr;
-    int n = nums.size();
-    for (int i = 0; i < n; i++) {
-        arr.push_back(nums[i] * nums[i]);
-    }
-    sort(arr.begin(), arr.end());
-    return arr;
+vector<int> bruteForce(vector<int> &nums) {
+  vector<int> arr;
+  int n = nums.size();
+  for (int i = 0; i < n; i++) {
+    arr.push_back(nums[i] * nums[i]);
+  }
+  sort(arr.begin(), arr.end());
+  return arr;
 }
 
 // ============================================================
@@ -51,58 +56,58 @@ vector<int> bruteForce(vector<int>& nums) {
 //  Time  : O(n)   — single pass
 //  Space : O(n)   — result array only
 // ============================================================
-vector<int> optimal(vector<int>& nums) {
-    int n = nums.size();
-    int i = 0;
-    int j = n - 1;
-    int k = n - 1;                  // fill result from the back
-    vector<int> res(n);
+vector<int> optimal(vector<int> &nums) {
+  int n = nums.size();
+  int i = 0;
+  int j = n - 1;
+  int k = n - 1; // fill result from the back
+  vector<int> res(n);
 
-    while (i <= j) {
-        int leftsq  = nums[i] * nums[i];
-        int rightsq = nums[j] * nums[j];
+  while (i <= j) {
+    int leftsq = nums[i] * nums[i];
+    int rightsq = nums[j] * nums[j];
 
-        if (leftsq > rightsq) {
-            res[k--] = leftsq;
-            i++;
-        } else {
-            res[k--] = rightsq;
-            j--;
-        }
+    if (leftsq > rightsq) {
+      res[k--] = leftsq;
+      i++;
+    } else {
+      res[k--] = rightsq;
+      j--;
     }
-    return res;
+  }
+  return res;
 }
 
 // ============================================================
 //  DRIVER / TEST
 // ============================================================
 int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
 
-    vector<int> nums1 = {-4, -1, 0, 3, 10};
-    vector<int> nums2 = {-7, -3, 2, 3, 11};
+  vector<int> nums1 = {-4, -1, 0, 3, 10};
+  vector<int> nums2 = {-7, -3, 2, 3, 11};
 
-    auto print = [](const string& label, vector<int>& v) {
-        cout << label << ": [";
-        for (int i = 0; i < (int)v.size(); i++)
-            cout << v[i] << (i + 1 < (int)v.size() ? "," : "");
-        cout << "]\n";
-    };
+  auto print = [](const string &label, vector<int> &v) {
+    cout << label << ": [";
+    for (int i = 0; i < (int)v.size(); i++)
+      cout << v[i] << (i + 1 < (int)v.size() ? "," : "");
+    cout << "]\n";
+  };
 
-    // Brute Force
-    auto r1 = bruteForce(nums1);
-    auto r2 = bruteForce(nums2);
-    cout << "--- Brute Force ---\n";
-    print("Test1", r1);   // Expected: [0,1,9,16,100]
-    print("Test2", r2);   // Expected: [4,9,9,49,121]
+  // Brute Force
+  auto r1 = bruteForce(nums1);
+  auto r2 = bruteForce(nums2);
+  cout << "--- Brute Force ---\n";
+  print("Test1", r1); // Expected: [0,1,9,16,100]
+  print("Test2", r2); // Expected: [4,9,9,49,121]
 
-    // Optimal
-    auto r3 = optimal(nums1);
-    auto r4 = optimal(nums2);
-    cout << "--- Optimal ---\n";
-    print("Test1", r3);   // Expected: [0,1,9,16,100]
-    print("Test2", r4);   // Expected: [4,9,9,49,121]
+  // Optimal
+  auto r3 = optimal(nums1);
+  auto r4 = optimal(nums2);
+  cout << "--- Optimal ---\n";
+  print("Test1", r3); // Expected: [0,1,9,16,100]
+  print("Test2", r4); // Expected: [4,9,9,49,121]
 
-    return 0;
+  return 0;
 }
