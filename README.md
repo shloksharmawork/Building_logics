@@ -47,6 +47,7 @@
 |------|-------|---------|----------|------------|
 | 2026-03-01 | Two Pointer | [LC 977 - Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/) | LeetCode | Easy |
 | 2026-03-04 | Two Pointer | [LC 15 - 3Sum](https://leetcode.com/problems/3sum/) | LeetCode | Medium |
+| 2026-03-04 | Two Pointer | [LC 75 - Sort Colors](https://leetcode.com/problems/sort-colors/) | LeetCode | Medium |
 
 ---
 
@@ -73,7 +74,7 @@ Every solution follows this structure:
 ## 🔥 Stats
 
 - **Streak**: 2 day(s)
-- **Total Solved**: 2
+- **Total Solved**: 3
 - **Started**: March 2026
 
 ---
