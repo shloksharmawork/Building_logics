@@ -33,7 +33,7 @@ Write-Host "[3/3] Pushing to GitHub..." -ForegroundColor Yellow
 git push origin main
 
 Write-Host ""
-Write-Host "Done! Today's solution is live on GitHub." -ForegroundColor Green
+Write-Host "Done! Today solution is live on GitHub." -ForegroundColor Green
 Write-Host "Keep grinding! Day $date complete." -ForegroundColor Green
 Write-Host ""
 Pause
