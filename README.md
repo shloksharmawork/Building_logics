@@ -49,6 +49,7 @@
 | 2026-03-04 | Two Pointer | [LC 15 - 3Sum](https://leetcode.com/problems/3sum/) | LeetCode | Medium |
 | 2026-03-04 | Two Pointer | [LC 75 - Sort Colors](https://leetcode.com/problems/sort-colors/) | LeetCode | Medium |
 | 2026-03-06 | Sliding Window | [LC 209 - Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/) | LeetCode | Medium |
+| 2026-03-06 | Sliding Window | [LC 904 - Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/) | LeetCode | Medium |
 
 ---
 
@@ -75,7 +76,7 @@ Every solution follows this structure:
 ## 🔥 Stats
 
 - **Streak**: 2 day(s)
-- **Total Solved**: 4
+- **Total Solved**: 5
 - **Started**: March 2026
 
 ---
